@@ -1,0 +1,52 @@
+#include <bits/stdc++.h>
+#define MAX 5
+using namespace std;
+void nhap(int mang[],int n);
+void tangdan(int mang[],int n);
+void giamdan(int mang[],int n);
+void kiemtra(int mang[],int n);
+int main(){
+	char cont;
+	do{
+	int x[MAX],n;
+	cout<<"Ban muon nhap bao nhieu so: ";
+	cin>>n;
+	nhap(x,n);cout<<endl;
+	tangdan(x,n);cout<<endl;
+	giamdan(x,n);cout<<endl;
+	kiemtra(x,n);cout<<endl;
+	cout<<"Ban co muon nhap so nua khong: ";
+	cin>>cont;
+	}while(cont=='Y'||cont=='y'||cont=='c'||cont=='C');
+	return 0;
+}
+void nhap(int mang[],int n){
+	cout<<"Nhap vao: ";
+	for(int i=0;i<n;i++){
+	cin>>mang[i];
+	}
+}
+void tangdan(int mang[],int n){
+	sort(mang,mang+n);
+	cout<<" Day so duoc sap xep tang dan ";
+	for(int i=0;i<n;i++){	
+	cout<<mang[i]<<" ";
+	}
+}
+void giamdan(int mang[],int n){
+	sort(mang,mang+n,greater<int>());
+	cout<<" Day so duoc sap xep giam dan ";
+	for(int i=0;i<n;i++){
+	cout<<mang[i]<<" ";
+} 
+}
+void kiemtra(int mang[],int n){
+	int s=0;
+	int dem=0;
+	cout<<"Moi nhap so ";int A;cin>>A;
+	for(int i=0;i<n;i++){
+	if((mang[i]%A)==0) dem++;
+}
+	cout<<"Co "<<dem<<" so "<<A<<endl;
+}
+
