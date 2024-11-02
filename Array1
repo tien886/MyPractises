@@ -2,7 +2,7 @@
 #define MAX 5
 using namespace std;
 void nhap(int mang[],int n);
-void tangdan(int mang[],int n);
+void tangdan(int mang[],int n); 
 void giamdan(int mang[],int n);
 void kiemtra(int mang[],int n);
 int main(){
