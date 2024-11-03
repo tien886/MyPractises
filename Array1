@@ -1,6 +1,6 @@
 #include <bits/stdc++.h> 
 #define MAX 5
-using namespace std;
+using namespace std; 
 void nhap(int mang[],int n);
 void tangdan(int mang[],int n);
 void giamdan(int mang[],int n);
