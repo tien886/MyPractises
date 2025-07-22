@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %} WELCOME TO OUR PAGE {% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{{url_for('static', filename = 'home.css')}}">
+<div id = "messages">
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for m in messages %}
+                <h3 class="info">
+                    {{ m }}
+                </h3>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+</div>
+<h1 id = 'user'>
+    Nice to meet you! Dear {{user}}
+</h1>
+
+{% endblock %}

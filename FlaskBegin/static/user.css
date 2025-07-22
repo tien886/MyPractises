@@ -1,0 +1,11 @@
+h1#user
+{
+    font-family: fantasy;
+}
+div#messages
+{
+    width: 100%;
+    background-color: red;
+    color: darkgray;
+    min-height:max-content;
+}
