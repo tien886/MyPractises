@@ -33,3 +33,22 @@ div#messages
     color: darkgray;
     min-height: max-content;
 }
+.error{
+    width: 100%;
+    background-color: red;
+    height: max-content;
+}
+
+.info
+{
+    width: 100%;
+    background-color: green;
+}
+form
+{
+    display: flex;
+    flex-direction: column;     /* stack vertically */
+    justify-content: center;    /* center vertically if parent has height */
+    align-items: center;        /* center horizontally */
+    /* height: 100vh;  */
+}

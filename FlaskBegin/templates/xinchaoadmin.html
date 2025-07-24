@@ -1,53 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title></title>
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="favicon.png" />
-
-    <!-- External CSS -->
-    <link rel="stylesheet" href="{{url_for('static', filename = 'css/new.css')}}" />
-    <body>
-      <h1 style="color: red; font-size: large; text-align: center">
-        XIN CHAO TIEN ADMIN
-      </h1>
-      <h1
-        id="Intro"
-        style="
-          margin: 0;
-          height: 90vh;
-          color: aquamarine;
-          font-size: xx-large;
-          font-weight: bold;
-          align-items: center;
-          justify-content: center;
-          text-align: center;
-          display: flex;
-        "
-      >
-        WELCOME TO MY WEBSITE
-      </h1>
-    </body>
-    <!-- Optional: Google Fonts -->
-    <!-- <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> -->
-  </head>
-  <body>
-    <header>
-      <h1></h1>
-    </header>
-
-    <nav></nav>
-
-    <main></main>
-
-    <footer></footer>
-
-    <!-- Optional: External JavaScript -->
-    <script src="script.js"></script>
-  </body>
-</html>
+{% extends "base.html" %} {% block content %}
+<link rel="stylesheet" href="{{url_for('static', filename = 'new.css')}}" />
+<body>
+  {% with messages = get_flashed_messages(with_categories = true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <h3 class = "{{category}}">
+                    {{ message }}
+                </h3>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    
+  <h1 style="color: red; font-size: large; text-align: center">
+    XIN CHAO TIEN ADMIN
+  </h1>
+  <h1 id="Intro">WELCOME TO MY WEBSITE</h1>
+</body>
+{% endblock %}

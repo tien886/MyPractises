@@ -1,8 +1,20 @@
-h1
+
+h1#Intro
 {
-    color: aquamarine;
-    font-size: xx-large;
-    font-weight: bold;
-    margin-top: auto;
-    text-align: center;
+        margin: 0;
+          height: 90vh;
+          color: rgb(172, 212, 199);
+          font-size: xx-large;
+          font-weight: bold;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          display: flex;
+}
+
+
+.info
+{
+    width: 100%;
+    background-color: green;
 }
