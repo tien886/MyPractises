@@ -1,0 +1,49 @@
+{% extends "base.html" %} {% block content %}
+<link
+  rel="stylesheet"
+  href="{{url_for('static', filename = 'delete_user.css')}}"
+/>
+<div id="messages">
+  {% with messages = get_flashed_messages(with_categories = true) %} {% if
+  messages %} {% for category, message in messages %}
+  <h3 class="{{category}}">{{ message|safe }}</h3>
+  {% endfor %} {% endif %} {% endwith %}
+</div>
+<h1 id="HELLO">USER DATA BOARD</h1>
+<div id="table">
+  <table>
+    <thead>
+      <tr>
+        <th>User ID</th>
+        <th>NAME</th>
+        <th>MODIFY</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for user in users %}
+      <tr>
+        <td>{{ user.user_id }}</td>
+        <td>{{ user.name }}</td>
+        <td>
+          <button>
+            <a href="{{ url_for('admin.delete_user', user_id=user.user_id) }}"
+              >DELETE</a>
+          </button>
+          <br />
+          <button>
+            <a href="">UPDATE</a>
+          </button>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <br>
+  {%if users%}
+  <button id = "delete_all">
+    <a href="{{url_for('admin.delete_all')}}" onclick="return confirm('Are you sure?')">DELETE ALL</a>
+  </button>
+  {%endif%}
+</div>
+
+{% endblock %}

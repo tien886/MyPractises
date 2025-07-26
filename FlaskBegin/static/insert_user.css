@@ -1,0 +1,59 @@
+.error{
+    width: 100%;
+    background-color: red;
+    height: max-content;
+}
+
+.info
+{
+    width: 100%;
+    background-color: green;
+}
+div#messages
+{
+    width: 100%;
+    color: darkgray;
+    min-height: max-content;
+}
+h1#HELLO
+{
+    color: red;
+    text-align: center;
+    font-weight: bold;
+    margin: 10px 10px;
+}
+div#task-form
+{
+    margin: 0 25%;
+    width: 50%;
+    height: 30vh;
+    background-color: bisque;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+}
+.child-task-form
+{
+    margin-top: 10px;
+    /* margin-right: 5%; */
+    
+}
+.child-task-form#button
+{
+    color:rgb(139, 211, 30);
+    background-color: white;
+    border-color: rgb(139, 211, 30);
+}
+.child-task-form#button:hover
+{
+    color: white;
+    background-color: rgb(139, 211, 30);
+}
+.child-task-form#input
+{
+    text-align: center;
+    width: 70%;
+}

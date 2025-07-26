@@ -1,0 +1,59 @@
+
+h1#Intro
+{
+        margin: 0;
+          height: 90vh;
+          color: rgb(172, 212, 199);
+          font-size: xx-large;
+          font-weight: bold;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          display: flex;
+}
+
+
+.info
+{
+    width: 100%;
+    background-color: green;
+}
+.error
+{
+    width: 100%;
+    background-color: red;
+}
+div#menu
+{
+    width: 50%;
+    margin: 0 25%;
+    height: 30vh;
+    background-color:antiquewhite;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+    
+}
+button{
+    margin-top: 10px;
+    background-color: white;
+    color: rgb(0, 181, 0);
+    border-color: rgb(0, 181, 0);
+}
+button:hover{
+    background-color: rgb(0, 181, 0);
+    color: white;
+    border: rgb(0, 181, 0);
+}
+a:hover
+{
+    font-weight: normal;
+    text-decoration: none;
+    color: black;
+}
+a{
+    font-weight: normal;
+    text-decoration: none;
+    color: black;
+}
