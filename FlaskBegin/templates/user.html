@@ -1,21 +1,19 @@
-{% extends "base.html" %}
-{% block title %} WELCOME TO OUR PAGE {% endblock %}
-
+{% extends "base.html" %} {% block title %} WELCOME TO OUR PAGE {% endblock %}
 {% block content %}
-<link rel="stylesheet" href="{{url_for('static', filename = 'user.css')}}">
-<div id = "messages">
-    {% with messages = get_flashed_messages(with_categories = true) %}
-        {% if messages %}
-            {% for category, message in messages %}
-                <h3 class="{{category}}">
-                    {{ message }}
-                </h3>
-            {% endfor %}
-        {% endif %}
-    {% endwith %}
+<link rel="stylesheet" href="{{url_for('static', filename = 'user.css')}}" />
+<div id="messages">
+  {% with messages = get_flashed_messages(with_categories = true) %} {% if
+  messages %} {% for category, message in messages %}
+  <h3 class="{{category}}">{{ message }}</h3>
+  {% endfor %} {% endif %} {% endwith %}
 </div>
-<h1 id = 'user'>
-    Nice to meet you! Dear {{user}}
-</h1>
+<div id="hello">HELLO {{user}}</div>
+<div id="task-form">
+  <form action="" method="post">
+    <label class = "child-task-form" id = "label" for="task">TASK</label>
+    <input class = "child-task-form" id = "input" type="text" name="task" placeholder="YOUR TASK TODAY?" />
+    <button class = "child-task-form" id = "button"type="submit">submit</button>
+  </form>
+</div>
 
 {% endblock %}

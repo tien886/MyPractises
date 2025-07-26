@@ -29,14 +29,12 @@ input[type="text"]
 div#messages
 {
     width: 100%;
-    background-color: red;
     color: darkgray;
     min-height: max-content;
 }
 .error{
     width: 100%;
     background-color: red;
-    height: max-content;
 }
 
 .info
@@ -51,4 +49,15 @@ form
     justify-content: center;    /* center vertically if parent has height */
     align-items: center;        /* center horizontally */
     /* height: 100vh;  */
+}
+
+div#LOGIN
+{
+    background-color: bisque;
+    width: 50%;
+    margin: 0 25%;
+    align-items:center ;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
 }

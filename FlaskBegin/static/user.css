@@ -1,6 +1,49 @@
 
+div#hello
+{
+    text-align: center;
+    font-size: larger;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+}
+div#task-form
+{
+    margin: 0 25%;
+    width: 50%;
+    height: 30vh;
+    background-color: bisque;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    /* display: flex; */
+    flex-direction: column;
+    border-radius: 10px;
+}
+
 .info
 {
     width: 100%;
     background-color: green;
+}
+.child-task-form
+{
+    margin-top: 10px;
+    margin-right: 5%;
+    
+}
+.child-task-form#button
+{
+    color:rgb(139, 211, 30);
+    background-color: white;
+    border-color: rgb(139, 211, 30);
+}
+.child-task-form#button:hover
+{
+    color: white;
+    background-color: rgb(139, 211, 30);
+}
+.child-task-form#input
+{
+    text-align: center;
+    width: 28%;
 }

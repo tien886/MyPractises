@@ -8,25 +8,21 @@
   <h3 class="{{category}}">{{ message }}</h3>
   {% endfor %} {% endif %} {% endwith %}
 </div>
-<div>
-  <h2>ENTER YOUR NAME:</h2>
-  <form action="#" method="post">
-    <div>
-      <label for="full_name"> YOUR FULL NAME:</label>
-      <input type="text" name="full_name" placeholder="your full name..." />
-    </div>
-    <br>
-    <div>
-      <label for="pass_word"> PASS WORD:</label>
-      <input
-        type="text"
-        name="pass_word"
-        placeholder="enter your password..."
-      />
-    </div>
-    <div>
-      <button>LOGIN</button>
-    </div>
+
+<h2>ENTER YOUR NAME:</h2>
+<div id = "LOGIN">
+  <form action="{{url_for('login_page')}}" method="post">
+    <label for="user_name"> YOUR USERNAME:</label>
+    <input type="text" name="full_name" placeholder="your full name..." />
+    <br />
+    <label for="pass_word"> PASS WORD:</label>
+    <input
+      type="text"
+      name="pass_word"
+      value="{{pass_word if pass_word}}"
+      placeholder="enter your password..."
+    />
+    <button>LOGIN</button>
   </form>
 </div>
 {% endblock %}
