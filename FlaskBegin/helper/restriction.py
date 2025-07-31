@@ -1,6 +1,6 @@
 from flask import Flask, redirect, url_for, render_template, request,session, flash, Blueprint
 from user import User
-from extensions import db
+from helper.extensions import db
 class Restriction:
     def CheckUserExist(user_name : str, User :User):
         all_users =  User.query.all()

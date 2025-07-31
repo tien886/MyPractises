@@ -39,17 +39,17 @@ def Print():
         SELECT * FROM cars
     """
     c.execute(sql_selectAll_table)
-    rows = c.fetchall()
+    rows = c.fetchall() 
     for row in rows:
         print(row)
 def main():
     try:
-        # c.execute(sql_create_table)s
+        # c.execute(sql_create_table)
         while(True):
             option = input()
             if(option == "0"): break
-            conn.execute(Insert())
-        conn.commit()
+            c.execute(Insert())
+        c.commit()
     except Exception as e:
         print("Error:", e)
     conn.close()

@@ -1,6 +1,5 @@
 from BOOK import Book
 import sqlite3
-
 connect = sqlite3.connect('Library.db')
 cursor = connect.cursor()
 sql_create_table = """
@@ -25,9 +24,6 @@ sql_Delete_All = f"""
 sql_Update_all = f"""
         UPDATE Library set author = ? WHERE bookname like ?
     """
-sql_Select_All_withID = """
-        SELECT rowid, *FROM Library 
-"""
 def insert_book():
     newBook = Book()
     newBook.DataEntry()
@@ -43,15 +39,7 @@ def Print():
 def delete_book():
     with connect:
         author_name = input("Enter the name of author to delete all the books ")
-        return cursor.execute(sql_Delete_All,(author_name, ))
-def select_all_with_primary_keys():
-    with connect:
-        return cursor.execute(sql_Select_All_withID)
-def PrintID():
-    data = select_all_with_primary_keys()
-    Books = data.fetchall()
-    for book in Books:
-        print(book)
+        cursor.execute(sql_Delete_All,(author_name))
 def main(): 
     try:
         # cursor.execute(sql_create_table)
@@ -61,10 +49,9 @@ def main():
             insert_book()
         delete_book()
         connect.commit()
-        # Print()
-        # print()
-        # Print()        
-        PrintID()
+        Print()
+        print()
+        Print()        
     except Exception as e:
         
         print("Error: ", e)    

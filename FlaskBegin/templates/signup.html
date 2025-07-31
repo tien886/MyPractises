@@ -1,0 +1,31 @@
+{% extends "base.html" %} {% block content%}
+<div id="messages">
+  {% with messages = get_flashed_messages(with_categories = true) %} {% if
+  messages %} {% for category, message in messages %}
+  <h3 class="{{category}}">{{ message }}</h3>
+  {% endfor %} {% endif %} {% endwith %}
+</div>
+<h2 style="font-weight: bold; text-align: center;">
+    SIGN UP HERE
+</h2>
+<form action="/signup" method="post">
+  <label for="gmail"> YOUR GMAIL:</label>
+  <input type="text" name="gmail" placeholder="enter your gmail..." />
+  <br />
+  <label for="user_name"> YOUR USERNAME:</label>
+  <input type="text" name="user_name" placeholder="enter your user name..." />
+  <br />
+  <label for="pass_word"> PASS WORD:</label>
+  <input
+    type="text"
+    name="pass_word"
+    value="{{pass_word if pass_word}}"
+    placeholder="enter your password..."
+  />
+  <br />
+  <button>
+    <a href=""></a>    SIGN UP
+</button>
+</form>
+
+{% endblock %}

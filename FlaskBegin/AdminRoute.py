@@ -1,8 +1,8 @@
 from flask import Flask, redirect, url_for, render_template, request,session, flash, Blueprint
-from purify import Purify
-from extensions import db
+from helper.purify import Purify
+from helper.extensions import db
 from user import User
-from restriction import Restriction
+from helper.restriction import Restriction
 admin = Blueprint("admin", __name__)
 
 @admin.route('/admin', methods=["GET", "POST"])
@@ -13,18 +13,19 @@ def admin_page():
 def insert_user():
     if request.method == "POST":
         all_users = User.query.all()
-        user_name = request.form["full_name"]
+        user_name = request.form["user_name"]
         pass_word = request.form["pass_word"]
+        user_gmail = request.form["gmail"]
+        if not user_name or not pass_word:
+            flash("YOU MAY NOT ENTER ENOUGH DATA OF USER", "error")
+            return redirect(url_for("admin.insert_user"))
         if Restriction.CheckUserExist(user_name, User):
             flash("USERNAME EXISTED", "error") 
             return redirect(url_for("admin.insert_user"))
         if not Restriction.CheckPassWordInFormat(pass_word):
             flash("PASSWORD IS WRONG IN FORMAT! TRY AGAIN", "error")
             return redirect(url_for('admin.insert_user'))
-        if not user_name or not pass_word:
-            flash("YOU MAY NOT ENTER USERNAME OR PASSWORD OF USER", "error")
-            return redirect(url_for("admin.insert_user"))
-        new_user = User(name=user_name, password=Purify.HashPassWord(pass_word))
+        new_user = User(name=user_name, password=Purify.HashPassWord(pass_word), gmail=user_gmail)
         db.session.add(new_user)
         db.session.commit()
         flash("ADDING SUCCESSFULLY", "info")

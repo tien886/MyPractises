@@ -9,11 +9,11 @@
   {% endfor %} {% endif %} {% endwith %}
 </div>
 
-<h2>ENTER YOUR NAME:</h2>
-<div id = "LOGIN">
+<h2>LOGIN HERE</h2>
+<div id="LOGIN">
   <form action="{{url_for('login_page')}}" method="post">
     <label for="user_name"> YOUR USERNAME:</label>
-    <input type="text" name="full_name" placeholder="your full name..." />
+    <input type="text" name="user_name" placeholder="your full name..." />
     <br />
     <label for="pass_word"> PASS WORD:</label>
     <input
@@ -22,7 +22,7 @@
       value="{{pass_word if pass_word}}"
       placeholder="enter your password..."
     />
-    <button>LOGIN</button>
+    <button>LOG IN</button>
   </form>
 </div>
 {% endblock %}

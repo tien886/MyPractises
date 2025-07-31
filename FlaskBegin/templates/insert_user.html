@@ -8,7 +8,7 @@
     {% with messages = get_flashed_messages(with_categories = true) %} 
         {% if messages %} 
             {% for category, message in messages %}
-                <h3 class="{{category}}">{{ message }}</h3>
+                <h3 class="{{category}}">{{message}}</h3>
             {% endfor %} 
         {% endif %} 
     {% endwith %}
@@ -16,12 +16,12 @@
   <h1 id="HELLO">INSERT USER DATA HERE</h1>
   <div id="task-form">
     <form action="/admin/insert" method="post">
-      <label class="child-task-form" id="label" for="full_name">USERNAME</label>
+      <label class="child-task-form" id="label" for="user_name">USERNAME</label>
       <input
         class="child-task-form"
         id="input"
         type="text"
-        name="full_name"
+        name="user_name"
         placeholder="ENTER USERNAME HERE"
       />
       <br />
@@ -32,6 +32,15 @@
         type="text"
         name="pass_word"
         placeholder="ENTER USERNAME PASSWORD"
+      />
+      <br>
+      <label class="child-task-form" id="label" for="GMAIL">GMAIL</label>
+      <input
+        class="child-task-form"
+        id="input"
+        type="text"
+        name="gmail"
+        placeholder="ENTER USERNAME gmail"
       />
       <button class="child-task-form" id="button" type="submit">INSERT</button>
     </form>
